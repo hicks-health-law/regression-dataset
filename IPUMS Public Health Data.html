@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Payton L Seats attn: Andrew Hicks">
+
+<title>PublicHealthData</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="IPUMS Public Health Data_files/libs/clipboard/clipboard.min.js"></script>
+<script src="IPUMS Public Health Data_files/libs/quarto-html/quarto.js"></script>
+<script src="IPUMS Public Health Data_files/libs/quarto-html/popper.min.js"></script>
+<script src="IPUMS Public Health Data_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="IPUMS Public Health Data_files/libs/quarto-html/anchor.min.js"></script>
+<link href="IPUMS Public Health Data_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="IPUMS Public Health Data_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="IPUMS Public Health Data_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="IPUMS Public Health Data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="IPUMS Public Health Data_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PublicHealthData</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Payton L Seats attn: Andrew Hicks </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="load-data-from-ipums-extract" class="level2">
+<h2 class="anchored" data-anchor-id="load-data-from-ipums-extract">Load Data from IPUMS Extract</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/plsea/Downloads"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">NOTE</span><span class="co">: To load data, you must download both the extract's data and the DDI</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and also set the working directory to the folder with these files (or change the path below).</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ipumsr"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"ipumsr"</span>)) <span class="fu">stop</span>(<span class="st">"Reading IPUMS data into R requires the ipumsr package. It can be installed using the following command: install.packages('ipumsr')"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ddi <span class="ot">&lt;-</span> <span class="fu">read_ipums_ddi</span>(<span class="st">"nhis_00001.xml"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_ipums_micro</span>(ddi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Use of data from IPUMS NHIS is subject to conditions including that users
+should cite the data appropriately. Use command `ipums_conditions()` for more
+details.</code></pre>
+</div>
+</div>
+</section>
+<section id="subset-data-of-interest" class="level2">
+<h2 class="anchored" data-anchor-id="subset-data-of-interest">Subset Data of Interest</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>PubHealth <span class="ot">=</span> data[,<span class="fu">c</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">33</span>,<span class="dv">43</span><span class="sc">:</span><span class="dv">49</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Dependent Variables: HEALTH</p>
+<p>Independent Variables: <em>Remaining</em></p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="multicollinearity" class="level3">
+<h3 class="anchored" data-anchor-id="multicollinearity">Multicollinearity</h3>
+<p>Testing independent variables for multicollinearity (using variance inflation factor, VIF).</p>
+<ul>
+<li><p>Response Variable: HEALTH</p></li>
+<li><p>Predictor Variables: <em>Remaining</em></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>multoCoModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(HEALTH <span class="sc">~</span> AGE <span class="sc">+</span> MARSTAT <span class="sc">+</span> USBORN <span class="sc">+</span> PAIDSICK <span class="sc">+</span> POVERTY <span class="sc">+</span> HIPRIVATEE <span class="sc">+</span> HIMCAID <span class="sc">+</span> SEX <span class="sc">+</span> RACENEW <span class="sc">+</span> CITIZEN <span class="sc">+</span> INCFAM97ON2 <span class="sc">+</span> HIMILITE <span class="sc">+</span> HIMCARE <span class="sc">+</span> SEXORIEN <span class="sc">+</span> RACEA <span class="sc">+</span> EMPSTAT <span class="sc">+</span> INCFAM07ON <span class="sc">+</span> HINOTCOVE <span class="sc">+</span> HIOTHGOVE <span class="sc">+</span> HIMEDIGAP,<span class="at">data =</span> PubHealth)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>MultiCoResult <span class="ot">&lt;-</span> <span class="fu">vif</span>(multoCoModel)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>MultiCoResult <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(MultiCoResult)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <a href="https://www.statology.org/multicollinearity-in-r/">rule of thumb</a> for VIF determination of multicollinearity is as follows:</p>
+<table class="table">
+<caption>Table from: <a href="https://www.statology.org/multicollinearity-in-r/" class="uri">https://www.statology.org/multicollinearity-in-r/</a></caption>
+<thead>
+<tr class="header">
+<th>VIF</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>There is no correlation between a given predictor variable and any other predictor variables in the model.</td>
+</tr>
+<tr class="even">
+<td>Between 1 &amp; 5</td>
+<td>There is moderate correlation between a given predictor variable and other predictor variables in the model.</td>
+</tr>
+<tr class="odd">
+<td>Greater than 5</td>
+<td>There is severe correlation between a given predictor variable and other predictor variables in the model.</td>
+</tr>
+</tbody>
+</table>
+<p>Variables with no correlation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MultiCoResult <span class="sc">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            MultiCoResult
+AGE                 FALSE
+MARSTAT             FALSE
+USBORN              FALSE
+PAIDSICK            FALSE
+POVERTY             FALSE
+HIPRIVATEE          FALSE
+HIMCAID             FALSE
+SEX                 FALSE
+RACENEW             FALSE
+CITIZEN             FALSE
+INCFAM97ON2         FALSE
+HIMILITE            FALSE
+HIMCARE             FALSE
+SEXORIEN            FALSE
+RACEA               FALSE
+EMPSTAT             FALSE
+INCFAM07ON          FALSE
+HINOTCOVE           FALSE
+HIOTHGOVE           FALSE
+HIMEDIGAP           FALSE</code></pre>
+</div>
+</div>
+<p>Variables with moderate correlation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MultiCoResult <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> MultiCoResult <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            MultiCoResult
+AGE                  TRUE
+MARSTAT              TRUE
+USBORN               TRUE
+PAIDSICK             TRUE
+POVERTY              TRUE
+HIPRIVATEE           TRUE
+HIMCAID             FALSE
+SEX                  TRUE
+RACENEW              TRUE
+CITIZEN              TRUE
+INCFAM97ON2          TRUE
+HIMILITE            FALSE
+HIMCARE             FALSE
+SEXORIEN             TRUE
+RACEA                TRUE
+EMPSTAT              TRUE
+INCFAM07ON           TRUE
+HINOTCOVE           FALSE
+HIOTHGOVE           FALSE
+HIMEDIGAP           FALSE</code></pre>
+</div>
+</div>
+<p>Variables with severe correlation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(MultiCoResult <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            MultiCoResult
+AGE                 FALSE
+MARSTAT             FALSE
+USBORN              FALSE
+PAIDSICK            FALSE
+POVERTY             FALSE
+HIPRIVATEE          FALSE
+HIMCAID              TRUE
+SEX                 FALSE
+RACENEW             FALSE
+CITIZEN             FALSE
+INCFAM97ON2         FALSE
+HIMILITE             TRUE
+HIMCARE              TRUE
+SEXORIEN            FALSE
+RACEA               FALSE
+EMPSTAT             FALSE
+INCFAM07ON          FALSE
+HINOTCOVE            TRUE
+HIOTHGOVE            TRUE
+HIMEDIGAP            TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="linear-relationships-and-heteroskedasticity" class="level3">
+<h3 class="anchored" data-anchor-id="linear-relationships-and-heteroskedasticity">Linear Relationships and Heteroskedasticity</h3>
+<p>Scatter plots</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olsrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'olsrr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:datasets':
+
+    rivers</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use independent variables of the model and perform multiple tests</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ols_test_breusch_pagan</span>(multoCoModel, <span class="at">rhs =</span> <span class="cn">TRUE</span>, <span class="at">multiple =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Breusch Pagan Test for Heteroskedasticity
+ -----------------------------------------
+ Ho: the variance is constant            
+ Ha: the variance is not constant        
+
+                                                                                       Data                                                                                        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Response : HEALTH 
+ Variables: AGE MARSTAT USBORN PAIDSICK POVERTY HIPRIVATEE HIMCAID SEX RACENEW CITIZEN INCFAM97ON2 HIMILITE HIMCARE SEXORIEN RACEA EMPSTAT INCFAM07ON HINOTCOVE HIOTHGOVE HIMEDIGAP 
+
+           Test Summary (Unadjusted p values)           
+ -----------------------------------------------------
+  Variable             chi2        df          p       
+ -----------------------------------------------------
+  AGE              11897.437290     1     0.000000e+00 
+  MARSTAT           1106.292860     1    1.416352e-242 
+  USBORN            1088.664226     1    9.608642e-239 
+  PAIDSICK           473.271319     1    6.221726e-105 
+  POVERTY            177.237992     1     1.943140e-40 
+  HIPRIVATEE           5.340572     1     2.083464e-02 
+  HIMCAID           3738.169930     1     0.000000e+00 
+  SEX                 39.482736     1     3.309725e-10 
+  RACENEW              2.201453     1     1.378808e-01 
+  CITIZEN           1032.645970     1    1.439864e-226 
+  INCFAM97ON2         68.025279     1     1.614128e-16 
+  HIMILITE          3295.390576     1     0.000000e+00 
+  HIMCARE           7196.812540     1     0.000000e+00 
+  SEXORIEN          1089.266716     1    7.107439e-239 
+  RACEA                3.655327     1     5.589017e-02 
+  EMPSTAT          21726.072181     1     0.000000e+00 
+  INCFAM07ON         260.639569     1     1.244818e-58 
+  HINOTCOVE         3338.653799     1     0.000000e+00 
+  HIOTHGOVE         3101.165651     1     0.000000e+00 
+  HIMEDIGAP         2699.962102     1     0.000000e+00 
+ -----------------------------------------------------
+  simultaneous     31667.752092    20     0.000000e+00 
+ -----------------------------------------------------</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bonferroni p value adjustment</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ols_test_breusch_pagan</span>(multoCoModel, <span class="at">rhs =</span> <span class="cn">TRUE</span>, <span class="at">multiple =</span> <span class="cn">TRUE</span>, <span class="at">p.adj =</span> <span class="st">'bonferroni'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Breusch Pagan Test for Heteroskedasticity
+ -----------------------------------------
+ Ho: the variance is constant            
+ Ha: the variance is not constant        
+
+                                                                                       Data                                                                                        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Response : HEALTH 
+ Variables: AGE MARSTAT USBORN PAIDSICK POVERTY HIPRIVATEE HIMCAID SEX RACENEW CITIZEN INCFAM97ON2 HIMILITE HIMCARE SEXORIEN RACEA EMPSTAT INCFAM07ON HINOTCOVE HIOTHGOVE HIMEDIGAP 
+
+           Test Summary (Bonferroni p values)           
+ -----------------------------------------------------
+  Variable             chi2        df          p       
+ -----------------------------------------------------
+  AGE              11897.437290     1     0.000000e+00 
+  MARSTAT           1106.292860     1    2.832704e-241 
+  USBORN            1088.664226     1    1.921728e-237 
+  PAIDSICK           473.271319     1    1.244345e-103 
+  POVERTY            177.237992     1     3.886279e-39 
+  HIPRIVATEE           5.340572     1     4.166928e-01 
+  HIMCAID           3738.169930     1     0.000000e+00 
+  SEX                 39.482736     1     6.619450e-09 
+  RACENEW              2.201453     1     1.000000e+00 
+  CITIZEN           1032.645970     1    2.879729e-225 
+  INCFAM97ON2         68.025279     1     3.228257e-15 
+  HIMILITE          3295.390576     1     0.000000e+00 
+  HIMCARE           7196.812540     1     0.000000e+00 
+  SEXORIEN          1089.266716     1    1.421488e-237 
+  RACEA                3.655327     1     1.000000e+00 
+  EMPSTAT          21726.072181     1     0.000000e+00 
+  INCFAM07ON         260.639569     1     2.489636e-57 
+  HINOTCOVE         3338.653799     1     0.000000e+00 
+  HIOTHGOVE         3101.165651     1     0.000000e+00 
+  HIMEDIGAP         2699.962102     1     0.000000e+00 
+ -----------------------------------------------------
+  simultaneous     31667.752092    20     0.000000e+00 
+ -----------------------------------------------------</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sidak p value adjustment</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ols_test_breusch_pagan</span>(multoCoModel, <span class="at">rhs =</span> <span class="cn">TRUE</span>, <span class="at">multiple =</span> <span class="cn">TRUE</span>, <span class="at">p.adj =</span> <span class="st">'sidak'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Breusch Pagan Test for Heteroskedasticity
+ -----------------------------------------
+ Ho: the variance is constant            
+ Ha: the variance is not constant        
+
+                                                                                       Data                                                                                        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Response : HEALTH 
+ Variables: AGE MARSTAT USBORN PAIDSICK POVERTY HIPRIVATEE HIMCAID SEX RACENEW CITIZEN INCFAM97ON2 HIMILITE HIMCARE SEXORIEN RACEA EMPSTAT INCFAM07ON HINOTCOVE HIOTHGOVE HIMEDIGAP 
+
+             Test Summary (Sidak p values)             
+ ----------------------------------------------------
+  Variable             chi2        df         p       
+ ----------------------------------------------------
+  AGE              11897.437290     1    0.000000e+00 
+  MARSTAT           1106.292860     1    0.000000e+00 
+  USBORN            1088.664226     1    0.000000e+00 
+  PAIDSICK           473.271319     1    0.000000e+00 
+  POVERTY            177.237992     1    0.000000e+00 
+  HIPRIVATEE           5.340572     1    3.436722e-01 
+  HIMCAID           3738.169930     1    0.000000e+00 
+  SEX                 39.482736     1    6.619449e-09 
+  RACENEW              2.201453     1    9.485546e-01 
+  CITIZEN           1032.645970     1    0.000000e+00 
+  INCFAM97ON2         68.025279     1    2.220446e-15 
+  HIMILITE          3295.390576     1    0.000000e+00 
+  HIMCARE           7196.812540     1    0.000000e+00 
+  SEXORIEN          1089.266716     1    0.000000e+00 
+  RACEA                3.655327     1    6.834441e-01 
+  EMPSTAT          21726.072181     1    0.000000e+00 
+  INCFAM07ON         260.639569     1    0.000000e+00 
+  HINOTCOVE         3338.653799     1    0.000000e+00 
+  HIOTHGOVE         3101.165651     1    0.000000e+00 
+  HIMEDIGAP         2699.962102     1    0.000000e+00 
+ ----------------------------------------------------
+  simultaneous     31667.752092    20    0.000000e+00 
+ ----------------------------------------------------</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># holm's p value adjustment</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ols_test_breusch_pagan</span>(multoCoModel, <span class="at">rhs =</span> <span class="cn">TRUE</span>, <span class="at">multiple =</span> <span class="cn">TRUE</span>, <span class="at">p.adj =</span> <span class="st">'holm'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ Breusch Pagan Test for Heteroskedasticity
+ -----------------------------------------
+ Ho: the variance is constant            
+ Ha: the variance is not constant        
+
+                                                                                       Data                                                                                        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Response : HEALTH 
+ Variables: AGE MARSTAT USBORN PAIDSICK POVERTY HIPRIVATEE HIMCAID SEX RACENEW CITIZEN INCFAM97ON2 HIMILITE HIMCARE SEXORIEN RACEA EMPSTAT INCFAM07ON HINOTCOVE HIOTHGOVE HIMEDIGAP 
+
+             Test Summary (Holm's p values)             
+ -----------------------------------------------------
+  Variable             chi2        df          p       
+ -----------------------------------------------------
+  AGE              11897.437290     1     0.000000e+00 
+  MARSTAT           1106.292860     1    1.699622e-241 
+  USBORN            1088.664226     1    9.608642e-238 
+  PAIDSICK           473.271319     1    4.977381e-104 
+  POVERTY            177.237992     1     1.165884e-39 
+  HIPRIVATEE           5.340572     1     6.250392e-02 
+  HIMCAID           3738.169930     1     0.000000e+00 
+  SEX                 39.482736     1     1.323890e-09 
+  RACENEW              2.201453     1     1.378808e-01 
+  CITIZEN           1032.645970     1    1.295878e-225 
+  INCFAM97ON2         68.025279     1     8.070641e-16 
+  HIMILITE          3295.390576     1     0.000000e+00 
+  HIMCARE           7196.812540     1     0.000000e+00 
+  SEXORIEN          1089.266716     1    7.818183e-238 
+  RACEA                3.655327     1     1.117803e-01 
+  EMPSTAT          21726.072181     1     0.000000e+00 
+  INCFAM07ON         260.639569     1     8.713727e-58 
+  HINOTCOVE         3338.653799     1     0.000000e+00 
+  HIOTHGOVE         3101.165651     1     0.000000e+00 
+  HIMEDIGAP         2699.962102     1     0.000000e+00 
+ -----------------------------------------------------
+  simultaneous     31667.752092    20     0.000000e+00 
+ -----------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
